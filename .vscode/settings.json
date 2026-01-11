@@ -1,0 +1,5 @@
+{
+    "go.testFlags": ["-v"],
+    "go.buildTags": "",
+    "go.testTimeout": "30s"
+}
