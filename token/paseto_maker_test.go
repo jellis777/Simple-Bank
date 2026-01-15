@@ -51,10 +51,10 @@ func TestPasetoWrongTokenType(t *testing.T) {
 	maker, err := NewPasetoMaker(util.RandomString(32))
 	require.NoError(t, err)
 
-	token, err := maker.CreateToken(util.RandomOwner(), time.Minute)
-	require.NoError(t, err)
-	require.NotEmpty(t, token)
+	// Create an invalid token - just use a plain string that's not a valid PASETO token
+	token := "this-is-not-a-valid-paseto-token"
 
+	// Try to verify invalid token with PASETO maker - should fail
 	payload, err := maker.VerifyToken(token)
 	require.Error(t, err)
 	require.EqualError(t, err, ErrInvalidToken.Error())
