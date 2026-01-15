@@ -8,6 +8,7 @@ import (
 	"github.com/techschool/simplebank/util"
 )
 
+// Checking testing
 func TestPasetoMaker(t *testing.T) {
 	maker, err := NewPasetoMaker(util.RandomString(32))
 	require.NoError(t, err)
